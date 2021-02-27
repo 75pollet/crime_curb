@@ -1,0 +1,39 @@
+<h2> Report a Crime</h2>
+       <%= f = form_for @changeset, "#", [phx_submit: :save] %>
+          <div class="input-field">
+             <%= label f, :name, "Name", class: "label has-text-grey-dark " %>
+             <%= text_input f, :name, placeholder: "Name", class: "input" %>
+             <%= error_tag f, :name %>
+          </div>
+           <div class="input-field">
+             <%= label f, :phone, "Phone Number", class: "label has-text-grey-dark" %>
+             <%= text_input f, :phone, placeholder: "Phone Number", class: "input"%>
+             <%= error_tag f, :phone %>
+           </div>
+           <div class="input-field">
+             <%= label f, :email, "Email", class: "label has-text-grey-dark" %>
+             <%= email_input f, :email, placeholder: "Email", class: "input"%>
+             <%= error_tag f, :email %>
+           </div>
+           <div class="input-field">
+             <%= label f, :location, "Location", class: "label has-text-grey-dark" %>
+             <%= text_input f, :location, placeholder: "Lutheran", class: "input"%>
+             <%= error_tag f, :location %>
+           </div>
+           <div class="input-field">
+             <%= label f, :date, "Date", class: "label has-text-grey-dark" %>
+             <%= date_input f, :date, placeholder: "Date", class: "input"%>
+             <%= error_tag f, :date %>
+           </div>
+           <div class="input-field">
+             <%= label f, :type, "Crime Type", class: "label has-text-grey-dark" %>
+             <%= select f, :type, ["Robbery", "Murder", "Hit and Run", "Battery"], class: "input"%>
+             <%= error_tag f, :type %>
+           </div>
+           <div class="input-field">
+             <%= label f, :description, "Description", class: "label has-text-grey-dark" %>
+             <%= textarea f, :description, placeholder: "Description", class: "input"%>
+             <%= error_tag f, :description %>
+           </div>
+           <%= submit "Save", class: "btn" %>
+     </form>

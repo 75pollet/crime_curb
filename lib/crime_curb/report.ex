@@ -1,6 +1,6 @@
 defmodule CrimeCurb.Report do
   use Ecto.Schema
-  use Ecto.Changeset
+  import Ecto.Changeset
 
   schema "reports" do
     field :name, :string
@@ -15,7 +15,7 @@ defmodule CrimeCurb.Report do
   end
 
   def changeset(report, attrs \\ %{}) do
-    user
+    report
     |> cast(attrs, [:name, :phone, :email, :location, :date, :type, :description])
     |> validate_required([:location, :date, :type, :description])
     |> unique_constraint(:email)
