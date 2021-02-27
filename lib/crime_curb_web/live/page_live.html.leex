@@ -27,7 +27,7 @@
            </div>
            <div class="input-field">
              <%= label f, :type, "Crime Type", class: "label has-text-grey-dark" %>
-             <%= select f, :type, ["Robbery", "Murder", "Hit and Run", "Battery"], class: "input"%>
+             <%= select f, :type, @crime_types, class: "input"%>
              <%= error_tag f, :type %>
            </div>
            <div class="input-field">
